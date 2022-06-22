@@ -30,7 +30,7 @@ class FunctionInfo:
             
                                 'TKPY_linear_mse': [['int'], ['float'], ['Mean Square Error score of Model']],
                                 'TKPY_linear_mae': [['int'], ['float'], ['Mean Absolute Error score of Model']],
-								'TKPY_linear_rmse': [['int'], ['float'], ['Root Mean Square Error score of Model']],
+				'TKPY_linear_rmse': [['int'], ['float'], ['Root Mean Square Error score of Model']],
                                 'TKPY_linear_coef': [['int'], ['float'], ['Coefficient values']],
                                 'TKPY_linear_intercept': [['int'], ['float'], ['Intercept values']],
                                 'TKPY_linear_r2_score': [['int'], ['float'], ['r^2 score of Model']],
@@ -62,23 +62,3 @@ def TKPY_linear_r2_score(dummy):
 
 def TKPY_linear_pred(dummy):
     return float(model.predict([[dummy]]))
-
-# print(TKPY_linear_pred(1500))
-# print(TKPY_linear_r2_score(1500))
-# print(TKPY_linear_coef(1500))
-# print(TKPY_linear_intercept(1500))
-# print(TKPY_linear_mse(1500))
-# print(TKPY_linear_mae(1500))
-# print(TKPY_linear_rmse(1500))
-
-# def main(z):
-#     a = pred(z)
-#     b = r2_score(z)
-#     c = coef(z)
-#     d = intercept(z)
-#     e = mse(z)
-#     f = mae(z)
-#     g = rmse(z)
-#     return np.array([a,b,c,d,e,f,g])
-
-# print(main(20))
