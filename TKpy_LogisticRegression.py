@@ -39,8 +39,8 @@ class FunctionInfo:
             
                                 'TKPY_logistic_pred': [['array'], ['float'], ['Predicted values']],
                                 'TKPY_logistic_Confusion': [['int'], ['matrix'], ['Confusion Matrix']],
-								'TKPY_logistic_r2_score': [['int'], ['float'], ['r^2 score of Model']],
-								'TKPY_logistic_coef': [['int'], ['array'], ['Coefficient values']],
+			        'TKPY_logistic_r2_score': [['int'], ['float'], ['r^2 score of Model']],
+			        'TKPY_logistic_coef': [['int'], ['array'], ['Coefficient values']],
                                 'TKPY_logistic_intercept': [['int'], ['float'], ['Intercept values']]
 							}
 	def get_func_dict(self):
