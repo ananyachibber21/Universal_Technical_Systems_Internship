@@ -13,7 +13,7 @@ y = dataset.iloc[:,-1].values
 
 # Split the data for training and testing
 from sklearn.model_selection import train_test_split
-x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.25, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.25, random_state=0)
 
 # Feature Scaling - we scale our data to make all the featured contribute equally to the result
 from sklearn.preprocessing import StandardScaler
@@ -38,7 +38,10 @@ class FunctionInfo:
 		self.func_dict =   {	
             
                                 'TKPY_logistic_pred': [['array'], ['float'], ['Predicted values']],
-                                'TKPY_logistic_Confusion': [['int'], ['matrix'], ['Confusion Matrix']]
+                                'TKPY_logistic_Confusion': [['int'], ['matrix'], ['Confusion Matrix']],
+								'TKPY_logistic_r2_score': [['int'], ['float'], ['r^2 score of Model']],
+								'TKPY_logistic_coef': [['int'], ['array'], ['Coefficient values']],
+                                'TKPY_logistic_intercept': [['int'], ['float'], ['Intercept values']]
 							}
 	def get_func_dict(self):
 		return self.func_dict
@@ -51,3 +54,16 @@ def TKPY_logistic_Confusion(dummy):
 	a = confusion_matrix(y_test,y_pred)
 	a = a + dummy - dummy
 	return np.array(a)
+
+def TKPY_logistic_r2_score(dummy):
+	a = model.score(x_test,y_test)
+	a = a + dummy - dummy
+	return(a)
+
+def TKPY_logistic_coef(dummy):
+	a=model.coef_
+	return a.flatten()
+
+def TKPY_logistic_intercept(dummy):
+	a=model.intercept_
+	return a
