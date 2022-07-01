@@ -75,12 +75,12 @@ class FunctionInfo:
                                 'TKPY_knn_pred': [['int','int','int'], ['int'], ['Predicted Value']],
                                 'TKPY_knn_r2_score': [['float'], ['float'], ['Accuracy Value']],
                                 'TKPY_knn_precision':[['int'], ['float'], ['Precision Value']],
-								'TKPY_knn_rmse': [['int'], ['float'], ['Root Mean Square Error score of Model']],
+				'TKPY_knn_rmse': [['int'], ['float'], ['Root Mean Square Error score of Model']],
                                 'TKPY_knn_mae': [['int'], ['float'], ['Mean Absolute Error of Model']],
-                                'TKPY_knn_recall': [['int'], ['float'], ['Recall Score of Model']]
-                                # 'TKPY_knn_Confusion': [['int'], ['matrix'], ['Confusion Matrix']]
+                                'TKPY_knn_recall': [['int'], ['float'], ['Recall Score of Model']],
+                                'TKPY_knn_Confusion': [['int'], ['matrix'], ['Confusion Matrix']]
                                 
-							}
+		}
 	def get_func_dict(self):
 		return self.func_dict
 
@@ -113,3 +113,8 @@ def TKPY_knn_recall(dummy):
     a = metrics.recall_score(y_test, y_pred)
     a = a + dummy - dummy
     return a
+
+def TKPY_knn_Confusion(dummy):
+    a = confusion_matrix(y_test,y_pred)
+    a = a + dummy - dummy
+    return np.array(a)
